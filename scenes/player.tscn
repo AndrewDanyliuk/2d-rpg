@@ -1,0 +1,55 @@
+[gd_scene load_steps=10 format=3 uid="uid://y606ccljfxu7"]
+
+[ext_resource type="Texture2D" uid="uid://qjwnsw2r1q5d" path="res://assets/dink/dink-idle-1.png" id="1_wnfjq"]
+[ext_resource type="Texture2D" uid="uid://d4gyy5cs3na7h" path="res://assets/dink/dink-idle-2.png" id="2_0hnvp"]
+[ext_resource type="Texture2D" uid="uid://bcuk1f6gpnpsx" path="res://assets/dink/dink-idle-3.png" id="3_soi6f"]
+[ext_resource type="Texture2D" uid="uid://dbqu704n4l1dq" path="res://assets/dink/dink-idle-4.png" id="4_vpngo"]
+[ext_resource type="Texture2D" uid="uid://de4kayinafave" path="res://assets/dink/dink-idle-5.png" id="5_omuju"]
+[ext_resource type="Texture2D" uid="uid://h8y3k2i6h3y8" path="res://assets/dink/dink-idle-6.png" id="6_0yl0g"]
+[ext_resource type="Texture2D" uid="uid://bkxd17s7p8dd0" path="res://assets/dink/dink-idle-7.png" id="7_ns068"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_je2u7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_wnfjq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_0hnvp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_soi6f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_vpngo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_omuju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_0yl0g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ns068")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sbbf8"]
+radius = 12.0
+height = 36.0
+
+[node name="Player" type="CharacterBody2D"]
+texture_filter = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_je2u7")
+animation = &"idle"
+frame_progress = 0.109473
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_sbbf8")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
